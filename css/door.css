@@ -1,0 +1,80 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.doors {
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.doors:hover h2 {
+  transform: scale(0);
+}
+.doors:hover .left {
+  transform: perspective(600px) rotateY(90deg);
+  right: 100%;
+}
+.doors:hover .right {
+  transform: perspective(600px) rotateY(-90deg);
+  left: 100%;
+  box-shadow: 3px 0 4px #111;
+}
+
+h2 {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  color: yellow;
+  z-index: 10;
+  text-align: center;
+  font-size: 48px;
+  font-family: "Trebuchet MS";
+  text-transform: uppercase;
+  text-shadow: 5px 0 2px #000;
+  transition: transform 2s ease-in-out;
+}
+
+.doors:hover h2 {
+  transform: scale(0);
+}
+
+.left {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 50%;
+  height: 100%;
+  box-shadow: 3px 0 4px #111;
+  border-right: 1px solid black;
+  background-image: url("https://i.stack.imgur.com/7YKUD.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1.5s ease-in-out;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-image: url("https://i.stack.imgur.com/7YKUD.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+  -ms-filter: "FlipH";
+  filter: FlipH;
+  transition: all 1.5s ease-in-out;
+}
